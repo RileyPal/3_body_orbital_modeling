@@ -17,6 +17,7 @@ vz2 = 0
 x2 = 364397*1000 # Rough periapsis for moons orbit in meters
 y2 = 0
 z2 = 0
+x3 =
 body1 = [mass1, x1, y1, z1, vx1, vy1, vz1]
 body2 = [mass2, x2, y2, z2, vx2, vy2, vy3]
 body3 = [mass3, x3, y3, z3, ]
@@ -37,6 +38,15 @@ Forces_1 = F1 * UnitDir1 + f1 * UnitDir2  # Forces on body 1
 Forces_2 = F1 * (-UnitDir1) + f2 * UnitDir3  # Forces on body 2
 Forces_3 = f1 * (-UnitDir2) + f2 * (-UnitDir3)  # Forces on body 3
 
+# Function to get initial conditions
+def get_initial_conditions():
+    try:
+        x3 = float(input("Enter the initial position (m) for simplicity this will be considered orbital height and will be placed on same line as other two bodies: "))
+        velocity_mag = float(input(
+            "Enter the initial orbital velocity magnitude (m/s) ex: 1000 m/s: "))
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+        return get_initial_conditions()
 
 def update_body_position_velocity(body, forces, dt):
     """
