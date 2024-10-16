@@ -89,8 +89,3 @@ body2 = update_body_position_velocity(body2, Forces_2, dt)
 
 # Body 3 (Station): Update position and velocity based on forces acting on it
 body3 = update_body_position_velocity(body3, Forces_3, dt)
-
-# Optional: print out the updated state for transparency
-print("Updated state of Earth (Body 1):", body1)
-print("Updated state of Moon (Body 2):", body2)
-print("Updated state of Station (Body 3):", body3)
